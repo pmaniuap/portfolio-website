@@ -29,9 +29,9 @@
     <nav class="navbar">
         <div class="nav-brand">Priyanshu Mani</div>
         <div class="nav-links">
-            <a href="#about" class="nav-link">About</a>
+            <a href="#home" class="nav-link active">Projects</a>
+            <a href="#intro" class="nav-link">About</a>
             <a href="#experience" class="nav-link">Experience</a>
-            <a href="#projects" class="nav-link">Projects</a>
             <a href="#skills" class="nav-link">Skills</a>
         </div>
         <a href="#contact" class="btn-primary">Get in touch</a>
@@ -44,24 +44,108 @@
 
     <!-- Mobile Menu -->
     <div class="mobile-menu">
-        <a href="#about" class="mobile-link">About</a>
+        <a href="#home" class="mobile-link active">Projects</a>
+        <a href="#intro" class="mobile-link">About</a>
         <a href="#experience" class="mobile-link">Experience</a>
-        <a href="#projects" class="mobile-link">Projects</a>
         <a href="#skills" class="mobile-link">Skills</a>
         <a href="#contact" class="mobile-link">Contact</a>
     </div>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="hero-container">
+    <!-- Hero Slider Section -->
+    <section class="hero-slider-section" id="home">
+        <div class="slider-container">
+            <div class="slider-track" id="sliderTrack">
+                
+                <!-- Slide 1 -->
+                <div class="slide">
+                    <div class="slide-content">
+                        <div class="slide-meta">01</div>
+                        <h2 class="slide-title">AI Stock Screener</h2>
+                        <p class="slide-desc">A real-time, Next.js-powered financial dashboard with dynamic filtering and deep AI analysis for the Nifty 500.</p>
+                        <a href="https://www.linkedin.com/posts/priyanshu-mani_buildingwithai-ugcPost-7456705140629340160-sw4Z?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAr0I2sBo-I6jWT5iCuGjfilKWMxE4Zebl0" target="_blank" class="btn-primary mt-4">View Project</a>
+                    </div>
+                    <div class="slide-media">
+                        <video id="screenerVideo" src="screener.mp4#t=55" autoplay muted playsinline class="slide-img"></video>
+                    </div>
+                </div>
+
+                <!-- Slide 2 -->
+                <div class="slide">
+                    <div class="slide-content">
+                        <div class="slide-meta">02</div>
+                        <h2 class="slide-title">Enhancing Zomato Dining Experience</h2>
+                        <p class="slide-desc">A strategic UX teardown and redesign presentation focused on optimizing the dining-out journey on Zomato.</p>
+                        <a href="https://www.figma.com/deck/vvijHdU3bkfSkLybvlpK3S/Enhancing-zomato-dining-experience-presentation?node-id=1-1013&t=ChThfLDqyfErwaEK-1" target="_blank" class="btn-primary mt-4">View Project</a>
+                    </div>
+                    <div class="slide-media">
+                        <img src="zomato.png" alt="Zomato" class="slide-img">
+                    </div>
+                </div>
+
+                <!-- Slide 3 -->
+                <div class="slide">
+                    <div class="slide-content">
+                        <div class="slide-meta">03</div>
+                        <h2 class="slide-title">Ideal Mobile Checkout Flow (India)</h2>
+                        <p class="slide-desc">A high-conversion, mobile-first checkout experience tailored for Indian consumers and localized payment methods.</p>
+                        <a href="https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2IvYy85YWZhNzU3ODU1OGRiZTk2L0VVa3U2M05ud3paTHFtWXloSkpvX3lnQkZCdXNQSFhDSTU2QjdBSU11dGxVenc%5FZT1kVHNESnE&cid=9AFA7578558DBE96&id=9AFA7578558DBE96%21s73eb2e49c3674b36aa6632849268ff28&parId=9AFA7578558DBE96%21s8fc8eb04ca2140f18e10b3e0a12a696b&o=OneUp" target="_blank" class="btn-primary mt-4">View Project</a>
+                    </div>
+                    <div class="slide-media">
+                        <img src="checkout.png" alt="Checkout" class="slide-img">
+                    </div>
+                </div>
+
+                <!-- Slide 4 -->
+                <div class="slide">
+                    <div class="slide-content">
+                        <div class="slide-meta">04</div>
+                        <h2 class="slide-title">Account Opening Flow</h2>
+                        <p class="slide-desc">End-to-end UX research and interface design for a seamless, secure, and compliant digital onboarding experience.</p>
+                        <a href="https://onedrive.live.com/?cid=9afa7578558dbe96&id=9AFA7578558DBE96%21s0950aa7beb564004948ab67b68eee5ff&resid=9AFA7578558DBE96%21s0950aa7beb564004948ab67b68eee5ff&ithint=file%2Cpdf&e=O8fnzh&migratedtospo=true&redeem=aHR0cHM6Ly8xZHJ2Lm1zL2IvYy85YWZhNzU3ODU1OGRiZTk2L0VYdXFVQWxXNndSQWxJcTJlMmp1NWY4QkExcXlxbnNxVWJlQnE2VjFMU1dnUEE_ZT1POGZuemg&v=validatepermission" target="_blank" class="btn-primary mt-4">View Project</a>
+                    </div>
+                    <div class="slide-media">
+                        <img src="account.png" alt="Account" class="slide-img">
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Thumbnail Navigation -->
+            <div class="slider-nav">
+                <div class="thumb active" data-index="0">
+                    <video src="screener.mp4#t=55" autoplay loop muted playsinline class="thumb-bg"></video>
+                </div>
+                <div class="thumb" data-index="1">
+                    <img src="zomato.png" class="thumb-bg">
+                </div>
+                <div class="thumb" data-index="2">
+                    <img src="checkout.png" class="thumb-bg">
+                </div>
+                <div class="thumb" data-index="3">
+                    <img src="account.png" class="thumb-bg">
+                </div>
+            </div>
+
+            <!-- Arrows -->
+            <button class="slider-arrow left" id="sliderPrev">
+                <i data-lucide="chevron-left"></i>
+            </button>
+            <button class="slider-arrow right" id="sliderNext">
+                <i data-lucide="chevron-right"></i>
+            </button>
+        </div>
+    </section>
+
+    <!-- Intro Section -->
+    <section class="section" id="intro">
+        <div class="container">
             <h1 class="hero-title reveal-text">
                 Building digital<br>
                 <span class="text-gray">experiences</span> at scale.
             </h1>
             <div class="hero-bottom reveal-fade">
                 <p class="hero-subtitle">
-                    Senior Product Manager (SAFe® PO/PM) with 8 years of experience in products for digital banking,
-                    finance and IT startups.
+                    Senior Product Manager (SAFe® PO/PM) with 8 years of experience in products for digital banking, finance and IT startups.
                 </p>
                 <div class="hero-stats">
                     <div class="stat-item">
@@ -184,65 +268,6 @@
         </div>
     </section>
 
-    <!-- Key Projects Section -->
-    <section class="section" id="projects">
-        <div class="container">
-            <div class="section-header reveal-fade">
-                <span class="section-number">.03</span>
-                <h2 class="section-title">Selected Work</h2>
-            </div>
-
-            <div class="projects-grid">
-                <!-- Project 1: Stock Screener -->
-                <a href="https://www.linkedin.com/posts/priyanshu-mani_buildingwithai-ugcPost-7456705140629340160-sw4Z?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAr0I2sBo-I6jWT5iCuGjfilKWMxE4Zebl0"
-                    target="_blank" class="project-card reveal-fade">
-                    <div class="project-image-wrapper">
-                        <video src="screener.mp4" autoplay loop muted playsinline class="project-img"></video>
-                    </div>
-                    <div class="project-num">01</div>
-                    <h3 class="project-title">AI Stock Screener</h3>
-                    <p class="project-desc">A real-time, Next.js-powered financial dashboard with dynamic filtering and
-                        deep AI analysis for the Nifty 500.</p>
-                </a>
-
-                <!-- Project 2: Zomato PPT -->
-                <a href="https://www.figma.com/deck/vvijHdU3bkfSkLybvlpK3S/Enhancing-zomato-dining-experience-presentation?node-id=1-1013&t=ChThfLDqyfErwaEK-1"
-                    target="_blank" class="project-card reveal-fade">
-                    <div class="project-image-wrapper">
-                        <img src="zomato.png" alt="Zomato Dining Experience" class="project-img">
-                    </div>
-                    <div class="project-num">02</div>
-                    <h3 class="project-title">Enhancing Zomato Dining Experience</h3>
-                    <p class="project-desc">A strategic UX teardown and redesign presentation focused on optimizing the
-                        dining-out journey on Zomato.</p>
-                </a>
-
-                <!-- Project 3: Checkout Flow -->
-                <a href="https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2IvYy85YWZhNzU3ODU1OGRiZTk2L0VVa3U2M05ud3paTHFtWXloSkpvX3lnQkZCdXNQSFhDSTU2QjdBSU11dGxVenc%5FZT1kVHNESnE&cid=9AFA7578558DBE96&id=9AFA7578558DBE96%21s73eb2e49c3674b36aa6632849268ff28&parId=9AFA7578558DBE96%21s8fc8eb04ca2140f18e10b3e0a12a696b&o=OneUp"
-                    target="_blank" class="project-card reveal-fade">
-                    <div class="project-image-wrapper">
-                        <img src="checkout.png" alt="Ideal Checkout Flow" class="project-img">
-                    </div>
-                    <div class="project-num">03</div>
-                    <h3 class="project-title">Ideal Mobile Checkout Flow (India)</h3>
-                    <p class="project-desc">A high-conversion, mobile-first checkout experience tailored for Indian
-                        consumers and localized payment methods.</p>
-                </a>
-
-                <!-- Project 4: Account Opening -->
-                <a href="https://onedrive.live.com/?cid=9afa7578558dbe96&id=9AFA7578558DBE96%21s0950aa7beb564004948ab67b68eee5ff&resid=9AFA7578558DBE96%21s0950aa7beb564004948ab67b68eee5ff&ithint=file%2Cpdf&e=O8fnzh&migratedtospo=true&redeem=aHR0cHM6Ly8xZHJ2Lm1zL2IvYy85YWZhNzU3ODU1OGRiZTk2L0VYdXFVQWxXNndSQWxJcTJlMmp1NWY4QkExcXlxbnNxVWJlQnE2VjFMU1dnUEE_ZT1POGZuemg&v=validatepermission"
-                    target="_blank" class="project-card reveal-fade">
-                    <div class="project-image-wrapper">
-                        <img src="account.png" alt="Account Opening Flow" class="project-img">
-                    </div>
-                    <div class="project-num">04</div>
-                    <h3 class="project-title">Account Opening Flow</h3>
-                    <p class="project-desc">End-to-end UX research and interface design for a seamless, secure, and
-                        compliant digital onboarding experience.</p>
-                </a>
-            </div>
-        </div>
-    </section>
 
     <!-- Skills Section -->
     <section class="section bg-darker" id="skills">
@@ -285,7 +310,6 @@
                     <h2 class="footer-title reveal-fade">Let's build<br>something great.</h2>
                     <div class="footer-contact reveal-fade">
                         <a href="mailto:mani.priyanshu@gmail.com" class="contact-link">mani.priyanshu@gmail.com</a>
-                        <a href="tel:+917579087508" class="contact-link">+91 7579087508</a>
                     </div>
                 </div>
                 <div class="footer-links reveal-fade">

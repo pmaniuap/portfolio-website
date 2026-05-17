@@ -33,6 +33,52 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Hero Slider
+    const track = document.getElementById('sliderTrack');
+    const thumbs = document.querySelectorAll('.thumb');
+    
+    if (track && thumbs.length) {
+        let currentSlide = 0;
+        const totalSlides = thumbs.length;
+        const thumbsList = Array.from(thumbs);
+
+        function goToSlide(index) {
+            currentSlide = index;
+            thumbsList.forEach(t => t.classList.remove('active'));
+            thumbsList[index].classList.add('active');
+            track.style.transform = `translateX(-${index * 25}%)`;
+        }
+
+        thumbsList.forEach((thumb, idx) => {
+            thumb.addEventListener('click', () => goToSlide(idx));
+        });
+
+        const prevBtn = document.getElementById('sliderPrev');
+        const nextBtn = document.getElementById('sliderNext');
+
+        if(prevBtn) {
+            prevBtn.addEventListener('click', () => {
+                const newIndex = (currentSlide - 1 + totalSlides) % totalSlides;
+                goToSlide(newIndex);
+            });
+        }
+        if(nextBtn) {
+            nextBtn.addEventListener('click', () => {
+                const newIndex = (currentSlide + 1) % totalSlides;
+                goToSlide(newIndex);
+            });
+        }
+    }
+
+    // Video Loop starting at 55s
+    const screenerVideo = document.getElementById('screenerVideo');
+    if (screenerVideo) {
+        screenerVideo.addEventListener('ended', () => {
+            screenerVideo.currentTime = 55;
+            screenerVideo.play();
+        });
+    }
+
     // Mobile Menu Toggle
     const mobileToggle = document.querySelector('.mobile-toggle');
     const mobileMenu = document.querySelector('.mobile-menu');
@@ -62,17 +108,39 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Hide Navbar on Scroll Down
-    let lastScrollY = window.scrollY;
-    const navbar = document.querySelector('.navbar');
+    // Active Menu Highlighting on Scroll
+    const sections = document.querySelectorAll('section, footer');
+    const navLinksArray = document.querySelectorAll('.nav-link');
+    const mobileNavLinksArray = document.querySelectorAll('.mobile-link');
 
     window.addEventListener('scroll', () => {
-        if (lastScrollY < window.scrollY && window.scrollY > 100) {
-            navbar.classList.add('hidden');
-        } else {
-            navbar.classList.remove('hidden');
+        let current = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            // Add offset so it highlights before hitting the absolute top
+            if (window.scrollY >= (sectionTop - 200)) {
+                current = section.getAttribute('id');
+            }
+        });
+
+        // Group 'about' section under 'intro' link
+        if (current === 'about') {
+            current = 'intro';
         }
-        lastScrollY = window.scrollY;
+
+        navLinksArray.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href').includes(current)) {
+                link.classList.add('active');
+            }
+        });
+
+        mobileNavLinksArray.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href').includes(current)) {
+                link.classList.add('active');
+            }
+        });
     });
 
     // Scroll Reveal Animation using Intersection Observer
